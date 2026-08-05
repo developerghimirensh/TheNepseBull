@@ -7,6 +7,7 @@ import PortfolioChart from "@/components/dashboard/PortfolioChart";
 import MarketMovers from "@/components/dashboard/MarketMovers";
 import TopLosers from "@/components/dashboard/TopLosers";
 import RecentTransactions from "@/components/dashboard/RecentTransactions";
+import MarketOverview from "@/components/dashboard/MarketOverview";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
         <div className="grid gap-6 lg:grid-cols-2">
           <PortfolioChart />
           <MarketMovers />
+          <MarketOverview />
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">

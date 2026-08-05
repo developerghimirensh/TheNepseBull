@@ -19,35 +19,41 @@ export default function StockSelector({
   onSelect,
 }: Props) {
   return (
-    <select
-      value={selected.symbol}
-      onChange={(e) => {
-        const stock = stocks.find(
-          (s) => s.symbol === e.target.value
-        );
+    <div className="rounded-2xl border border-zinc-800 p-6">
+      <h2 className="mb-4 text-xl font-bold">
+        Select Stock
+      </h2>
 
-        if (stock) {
-          onSelect(stock);
-        }
-      }}
-      className="
-      w-full
-      rounded-xl
-      border
-      border-zinc-700
-      bg-zinc-900
-      p-4
-      outline-none
-    "
-    >
-      {stocks.map((stock) => (
-        <option
-          key={stock.symbol}
-          value={stock.symbol}
-        >
-          {stock.symbol} - {stock.name}
-        </option>
-      ))}
-    </select>
+      <select
+        value={selected.symbol}
+        onChange={(e) => {
+          const stock = stocks.find(
+            (s) => s.symbol === e.target.value
+          );
+
+          if (stock) {
+            onSelect(stock);
+          }
+        }}
+        className="
+          w-full
+          rounded-xl
+          border
+          border-zinc-700
+          bg-black
+          p-3
+          outline-none
+        "
+      >
+        {stocks.map((stock) => (
+          <option
+            key={stock.symbol}
+            value={stock.symbol}
+          >
+            {stock.symbol} - {stock.name}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }

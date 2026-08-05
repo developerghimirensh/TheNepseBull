@@ -1,4 +1,6 @@
-type TradingContextType = {
+import { Holding, Trade } from "./trading";
+
+export type TradingContextType = {
   cash: number;
   holdings: Holding[];
   trades: Trade[];
